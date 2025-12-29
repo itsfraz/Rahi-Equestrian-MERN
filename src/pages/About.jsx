@@ -1,9 +1,20 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FiTarget, FiTool } from 'react-icons/fi';
 
 const About = () => {
   return (
-    <div className="py-12 md:py-20 container-custom">
+    <>
+      <Helmet>
+        <title>About Us - Our Story & Mission | Rahi Equestrian</title>
+        <meta name="description" content="Learn about Rahi Equestrian's passion for quality craftsmanship, our mission to provide world-class saddlery, and our commitment to the equestrian community." />
+        <meta name="keywords" content="about rahi equestrian, equestrian company, leather craftsmanship, horse riding equipment" />
+        <meta property="og:title" content="About Rahi Equestrian" />
+        <meta property="og:description" content="Passionate about the bond between horse and rider since our founding in Kanpur." />
+        <link rel="canonical" href="https://rahiequestrian.com/about" />
+      </Helmet>
+      
+      <div className="py-12 md:py-20 container-custom">
       <div className="text-center mb-12 md:mb-16 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 gradient-text animate-[fadeIn_0.6s_ease-out]">
           About Rahi Equestrian
@@ -53,6 +64,7 @@ const About = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

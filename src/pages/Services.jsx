@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FiTarget, FiTool, FiSend, FiLayers } from 'react-icons/fi';
 
 const Services = () => {
@@ -30,7 +31,17 @@ const Services = () => {
     ];
 
   return (
-    <div className="py-12 md:py-20 container-custom">
+    <>
+      <Helmet>
+        <title>Our Services - Custom Fitting, Repairs & Shipping | Rahi Equestrian</title>
+        <meta name="description" content="Explore Rahi Equestrian's professional services including custom saddle fitting, tack repair, international shipping, and bulk order discounts for riding schools." />
+        <meta name="keywords" content="saddle fitting, tack repair, equestrian shipping, bulk horse equipment, riding school supplies" />
+        <meta property="og:title" content="Our Services | Rahi Equestrian" />
+        <meta property="og:description" content="Professional equestrian services from custom fitting to worldwide shipping." />
+        <link rel="canonical" href="https://rahiequestrian.com/services" />
+      </Helmet>
+      
+      <div className="py-12 md:py-20 container-custom">
       <div className="text-center mb-12 md:mb-16">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 gradient-text animate-[fadeIn_0.6s_ease-out]">
           Our Services
@@ -62,6 +73,7 @@ const Services = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

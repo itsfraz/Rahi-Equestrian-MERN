@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -36,7 +37,18 @@ const Home = () => {
   ];
 
   return (
-    <div className="home-page bg-gradient-to-b from-gray-50 to-white">
+    <>
+      <Helmet>
+        <title>Rahi Equestrian - Premium Equestrian Equipment & Riding Gear</title>
+        <meta name="description" content="Discover premium equestrian equipment, handcrafted leather saddles, riding gear, and horse care essentials. Equipping champions with quality and craftsmanship." />
+        <meta name="keywords" content="equestrian equipment, horse saddles, riding gear, horse care, leather saddles, equestrian supplies" />
+        <meta property="og:title" content="Rahi Equestrian - Premium Equestrian Equipment" />
+        <meta property="og:description" content="Equipping champions with the finest tack, riding gear, and horse care essentials." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://rahiequestrian.com/" />
+      </Helmet>
+      
+      <div className="home-page bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Slider */}
       <div className="w-full h-[65vh] min-h-[450px] max-h-[750px] md:h-[80vh] md:min-h-[550px] relative overflow-hidden">
         <Swiper
@@ -133,6 +145,7 @@ const Home = () => {
         <Contact />
       </section>
     </div>
+    </>
   );
 };
 

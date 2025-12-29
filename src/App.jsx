@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import LoadingSpinner from './components/LoadingSpinner';
 import ScrollToTop from './components/ScrollToTop';
@@ -16,6 +17,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <ScrollToTop />
       <Layout>
@@ -32,6 +34,7 @@ function App() {
         </Suspense>
       </Layout>
     </Router>
+    </HelmetProvider>
   );
 }
 

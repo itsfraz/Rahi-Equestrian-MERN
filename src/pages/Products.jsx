@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { products } from '../data/products';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiShoppingBag } from 'react-icons/fi';
@@ -29,7 +30,19 @@ const Products = ({ limit, featured }) => {
   const displayData = getDisplayData();
 
   return (
-    <div className="py-12 md:py-20 container-custom">
+    <>
+      {!limit && !featured && (
+        <Helmet>
+          <title>Equestrian Products - Premium Saddles & Riding Gear | Rahi Equestrian</title>
+          <meta name="description" content="Browse our complete collection of premium equestrian products including handcrafted saddles, riding gear, horse care essentials, and accessories." />
+          <meta name="keywords" content="equestrian products, horse saddles, bridles, riding boots, horse blankets, grooming supplies" />
+          <meta property="og:title" content="Equestrian Products | Rahi Equestrian" />
+          <meta property="og:description" content="Browse our complete collection of premium equestrian products." />
+          <link rel="canonical" href="https://rahiequestrian.com/products" />
+        </Helmet>
+      )}
+      
+      <div className="py-12 md:py-20 container-custom">
       <div className="text-center mb-12 md:mb-16">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-4 gradient-text animate-[fadeIn_0.6s_ease-out]">
           {featured ? 'Featured Collections' : (limit ? 'Featured Products' : 'Our Collection')}
@@ -109,6 +122,7 @@ const Products = ({ limit, featured }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

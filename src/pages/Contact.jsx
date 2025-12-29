@@ -1,9 +1,20 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaEnvelope, FaWhatsapp, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaFacebookF, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <div className="py-12 md:py-20 container-custom">
+    <>
+      <Helmet>
+        <title>Contact Us - Get in Touch | Rahi Equestrian</title>
+        <meta name="description" content="Contact Rahi Equestrian for inquiries about our premium equestrian products. Reach us via email, WhatsApp, or visit our location in Kanpur, India." />
+        <meta name="keywords" content="contact rahi equestrian, equestrian inquiry, horse equipment contact, kanpur equestrian" />
+        <meta property="og:title" content="Contact Rahi Equestrian" />
+        <meta property="og:description" content="Get in touch with us for all your equestrian equipment needs." />
+        <link rel="canonical" href="https://rahiequestrian.com/contact" />
+      </Helmet>
+      
+      <div className="py-12 md:py-20 container-custom">
       <div className="text-center mb-12 md:mb-16">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 gradient-text animate-[fadeIn_0.6s_ease-out]">
           Get in Touch
@@ -76,6 +87,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
