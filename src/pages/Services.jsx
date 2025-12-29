@@ -1,27 +1,64 @@
 import React from 'react';
+import { FiTarget, FiTool, FiSend, FiLayers } from 'react-icons/fi';
 
 const Services = () => {
     const services = [
-        { title: 'Custom Saddle Fitting', desc: 'Expert assessment to ensure the perfect fit for your horse.' },
-        { title: 'Tack Repair', desc: 'Restoration and repair services for your leather equipment.' },
-        { title: 'International Shipping', desc: 'Fast and secure delivery to equestrians worldwide.' },
-        { title: 'Bulk Orders', desc: 'Special pricing for stable and riding school outfitting.' },
+        { 
+          icon: <FiTarget className="w-16 h-16" />, 
+          title: 'Custom Saddle Fitting', 
+          desc: 'Expert assessment to ensure the perfect fit for your horse.',
+          color: 'from-blue-500 to-cyan-500'
+        },
+        { 
+          icon: <FiTool className="w-16 h-16" />, 
+          title: 'Tack Repair', 
+          desc: 'Restoration and repair services for your leather equipment.',
+          color: 'from-purple-500 to-pink-500'
+        },
+        { 
+          icon: <FiSend className="w-16 h-16" />, 
+          title: 'International Shipping', 
+          desc: 'Fast and secure delivery to equestrians worldwide.',
+          color: 'from-orange-500 to-red-500'
+        },
+        { 
+          icon: <FiLayers className="w-16 h-16" />, 
+          title: 'Bulk Orders', 
+          desc: 'Special pricing for stable and riding school outfitting.',
+          color: 'from-green-500 to-emerald-500'
+        },
     ];
 
   return (
-    <div className="py-12 md:py-16 container-custom">
-      <h1 className="text-center text-3xl md:text-4xl lg:text-5xl mb-3 text-text px-4">
-        Our Services
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8">
+    <div className="py-12 md:py-20 container-custom">
+      <div className="text-center mb-12 md:mb-16">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 gradient-text animate-[fadeIn_0.6s_ease-out]">
+          Our Services
+        </h1>
+        <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full animate-[scaleIn_0.8s_ease-out_0.2s_both]"></div>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {services.map((service, idx) => (
-            <div 
-              className="p-8 md:p-6 bg-white rounded-xl shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]" 
-              key={idx}
-            >
-                <h3 className="text-xl md:text-2xl">{service.title}</h3>
-                <p className="text-base md:text-lg">{service.desc}</p>
+          <div 
+            key={idx}
+            className="card-premium p-8 md:p-10 group relative overflow-hidden animate-[scaleIn_0.6s_ease-out]"
+            style={{ animationDelay: `${idx * 0.15}s`, animationFillMode: 'both' }}
+          >
+            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${service.color} opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
+            <div className="relative z-10">
+              <div className="mb-6 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 inline-block text-shadow-sm">
+                {service.icon}
+              </div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 text-text group-hover:text-primary transition-colors duration-300">
+                {service.title}
+              </h3>
+              <p className="text-base md:text-lg text-text-light leading-relaxed">
+                {service.desc}
+              </p>
+              <div className={`mt-6 w-16 h-1.5 bg-gradient-to-r ${service.color} rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
             </div>
+          </div>
         ))}
       </div>
     </div>

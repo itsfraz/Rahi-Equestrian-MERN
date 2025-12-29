@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
+import { FiAward, FiTool, FiGlobe } from 'react-icons/fi';
 
 import About from './About';
 import Services from './Services';
@@ -35,9 +36,9 @@ const Home = () => {
   ];
 
   return (
-    <div className="home-page">
+    <div className="home-page bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Slider */}
-      <div className="w-full h-[60vh] min-h-[400px] max-h-[700px] md:h-[75vh] md:min-h-[500px]">
+      <div className="w-full h-[65vh] min-h-[450px] max-h-[750px] md:h-[80vh] md:min-h-[550px] relative overflow-hidden">
         <Swiper
           spaceBetween={0}
           effect={'fade'}
@@ -60,17 +61,22 @@ const Home = () => {
                 className="relative h-full flex items-center justify-center text-center bg-cover bg-center text-white"
                 style={{backgroundImage: `url('${slide.image}')`}}
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
-                <div className="relative z-10 max-w-4xl px-6 container-custom">
-                  <h1 className="mb-4 text-shadow-md leading-tight">{slide.title}</h1>
-                  <p className="text-base md:text-xl lg:text-2xl mb-8 opacity-95 text-shadow-sm max-w-2xl mx-auto leading-normal">
+                <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/60"></div>
+                <div className="relative z-10 max-w-5xl px-6 container-custom animate-[fadeIn_1s_ease-out]">
+                  <h1 className="mb-6 text-shadow-lg leading-tight font-display animate-[slideUp_0.8s_ease-out]">
+                    {slide.title}
+                  </h1>
+                  <p className="text-lg md:text-xl lg:text-2xl mb-10 opacity-95 text-shadow-md max-w-3xl mx-auto leading-relaxed animate-[slideUp_1s_ease-out_0.2s_both]">
                     {slide.subtitle}
                   </p>
                   <a 
                     href="#products-section" 
-                    className="inline-flex items-center justify-center bg-primary text-white py-3.5 px-8 rounded-full font-semibold text-base transition-all duration-300 border-2 border-transparent shadow-lg min-h-[48px] hover:bg-primary-dark hover:shadow-xl active:scale-[0.98]"
+                    className="btn-premium inline-flex items-center justify-center bg-gradient-to-r from-primary to-accent text-white py-4 px-10 rounded-full font-bold text-base md:text-lg transition-all duration-300 border-2 border-white/20 shadow-2xl min-h-[56px] hover:shadow-glow hover:scale-105 active:scale-95 animate-[bounceIn_1.2s_ease-out_0.4s_both]"
                   >
-                    Shop Collection
+                    <span className="relative z-10">Explore Collection</span>
+                    <svg className="w-5 h-5 ml-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -80,38 +86,50 @@ const Home = () => {
       </div>
       
       {/* Features Section */}
-      <section className="container-custom grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 py-8 lg:py-12">
-        <div className="p-8 sm:p-6 bg-white rounded-xl shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-          <h3 className="text-xl md:text-2xl">Premium Leather</h3>
-          <p className="text-base md:text-lg">Hand-selected leather for durability and elegance.</p>
-        </div>
-        <div className="p-8 sm:p-6 bg-white rounded-xl shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-          <h3 className="text-xl md:text-2xl">Expert Craftsmanship</h3>
-          <p className="text-base md:text-lg">Designed by riders, for riders.</p>
-        </div>
-        <div className="p-8 sm:p-6 bg-white rounded-xl shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-          <h3 className="text-xl md:text-2xl">Global Shipping</h3>
-          <p className="text-base md:text-lg">Delivering equestrian excellence worldwide.</p>
+      <section className="container-custom py-16 md:py-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {[
+            { icon: <FiAward className="w-12 h-12" />, title: 'Premium Leather', desc: 'Hand-selected leather for durability and elegance.' },
+            { icon: <FiTool className="w-12 h-12" />, title: 'Expert Craftsmanship', desc: 'Designed by riders, for riders.' },
+            { icon: <FiGlobe className="w-12 h-12" />, title: 'Global Shipping', desc: 'Delivering equestrian excellence worldwide.' }
+          ].map((feature, index) => (
+            <div 
+              key={index}
+              className="card-premium p-8 group animate-[scaleIn_0.6s_ease-out]"
+              style={{ animationDelay: `${index * 0.15}s`, animationFillMode: 'both' }}
+            >
+              <div className="mb-4 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 text-text group-hover:text-primary transition-colors duration-300">
+                {feature.title}
+              </h3>
+              <p className="text-base md:text-lg text-text-light leading-relaxed">
+                {feature.desc}
+              </p>
+              <div className="mt-6 w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Products Section */}
-      <div id="products-section">
-        <Products limit={3} />
+      <div id="products-section" className="bg-gradient-to-b from-white to-gray-50 py-16">
+        <Products featured={true} />
       </div>
       
       {/* Services Section */}
-      <section id="services-section" className="bg-secondary">
+      <section id="services-section" className="bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/20 py-16">
         <Services />
       </section>
 
       {/* About Section */}
-      <section id="about-section">
+      <section id="about-section" className="py-16">
         <About />
       </section>
 
       {/* Contact Section */}
-      <section id="contact-section" className="bg-secondary">
+      <section id="contact-section" className="bg-gradient-to-br from-gray-50 to-blue-50/30 py-16">
         <Contact />
       </section>
     </div>

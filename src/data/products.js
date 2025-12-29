@@ -66,56 +66,105 @@ const products = [
     name: "Field Riding Boots",
     price: 219.99,
     image: "/images/Apperal_BT_N02.jpeg",
+    images: [
+      "/images/Apperal_BT_N02.jpeg",
+      "/images/Apperal_BT_N01.jpeg",
+      "/images/Apperal_BT_N03.jpeg"
+    ],
     description: "Classic field boots with laced front for flexibility.",
-    category: "Rider Gear"
+    category: "Rider Gear",
+    sizes: ["36", "37", "38", "39", "40", "41"],
+    colors: ["#3E2723", "#000000"]
   },
   {
     id: 6,
     name: "Dressage Boots",
     price: 249.99,
     image: "/images/Apperal_BT_N03.jpeg",
+    images: [
+      "/images/Apperal_BT_N03.jpeg",
+      "/images/Apperal_BT_N02.jpeg",
+      "/images/Apperal_BT_N01.jpeg"
+    ],
     description: "Stiff-shaft dressage boots for optimal leg position.",
-    category: "Rider Gear"
+    category: "Rider Gear",
+    sizes: ["36", "37", "38", "39", "40", "41"],
+    colors: ["#000000"]
   },
   {
     id: 7,
     name: "Premium Leather Bridle",
     price: 149.99,
     image: "/images/Equ_pro_B01.jpeg",
-    description: "High-quality leather bridle with padded noseband.",
-    category: "Saddlery"
+    images: [
+      "/images/Equ_pro_B01.jpeg",
+      "/images/Equ_pro_B02.jpeg",
+      "/images/Equ_pro_B03.jpeg"
+    ],
+    description: "High-quality leather bridle with padded noseband. Features stainless steel fittings and raised browband details.",
+    category: "Saddlery",
+    sizes: ["Cob", "Full", "X-Full"],
+    colors: ["#3E2723", "#000000"]
   },
   {
     id: 8,
     name: "Anatomic Bridle Set",
     price: 169.99,
     image: "/images/Equ_pro_B02.jpeg",
-    description: "Anatomically designed headpiece to reduce pressure.",
-    category: "Saddlery"
+    images: [
+      "/images/Equ_pro_B02.jpeg",
+      "/images/Equ_pro_B01.jpeg",
+      "/images/Equ_pro_B04.jpeg"
+    ],
+    description: "Anatomically designed headpiece to reduce pressure. Includes matching rubber reins.",
+    category: "Saddlery",
+    sizes: ["Cob", "Full"],
+    colors: ["#3E2723", "#000000"]
   },
   {
     id: 9,
     name: "Show Jumping Bridle",
     price: 159.99,
     image: "/images/Equ_pro_B03.jpeg",
-    description: "Fancy stitched bridle ideal for the show ring.",
-    category: "Saddlery"
+    images: [
+      "/images/Equ_pro_B03.jpeg",
+      "/images/Equ_pro_B04.jpeg",
+      "/images/Equ_pro_B01.jpeg"
+    ],
+    description: "Fancy stitched bridle ideal for the show ring. Supple european leather.",
+    category: "Saddlery",
+    sizes: ["Cob", "Full"],
+    colors: ["#3E2723", "#5D4037"]
   },
   {
     id: 10,
     name: "Double Bridle",
     price: 189.99,
     image: "/images/Equ_pro_B04.jpeg",
-    description: "Elegant double bridle for upper level dressage.",
-    category: "Saddlery"
+    images: [
+      "/images/Equ_pro_B04.jpeg",
+      "/images/Equ_pro_B03.jpeg",
+      "/images/Equ_pro_B02.jpeg"
+    ],
+    description: "Elegant double bridle for upper level dressage. Includes two sets of reins.",
+    category: "Saddlery",
+    sizes: ["Full", "X-Full"],
+    colors: ["#000000"]
   },
   {
     id: 11,
     name: "Leather Headcollar",
     price: 49.99,
     image: "/images/Cagry4.jpeg",
-    description: "Soft leather headcollar with brass fittings.",
-    category: "Horse Care"
+    images: [
+      "/images/Cagry4.jpeg",
+      "/images/Equ_pro_B01.jpeg", // Simulated view
+      "/images/Equ_pro_B02.jpeg"  // Simulated view
+    ],
+    description: "Soft leather headcollar with brass fittings. Perfect for shows and travel.",
+    category: "Horse Care",
+    sizes: ["Pony", "Cob", "Full"],
+    colors: ["#3E2723", "#000000", "#5D4037"]
   }
 ];
 
