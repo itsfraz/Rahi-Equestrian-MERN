@@ -4,7 +4,7 @@ import { FiPackage } from 'react-icons/fi';
 // Loading Skeleton for Product Cards
 export const ProductCardSkeleton = () => (
   <div className="card-premium p-0 overflow-hidden animate-pulse">
-    <div className="w-full aspect-square bg-gradient-to-br from-gray-200 to-gray-100"></div>
+    <div className="w-full aspect-square bg-linear-to-br from-gray-200 to-gray-100"></div>
     <div className="p-6 space-y-3">
       <div className="h-3 bg-gray-200 rounded-full w-1/3"></div>
       <div className="h-6 bg-gray-300 rounded-lg w-3/4"></div>
@@ -32,7 +32,7 @@ export const FeatureCardSkeleton = () => (
 
 // Empty State Component
 export const EmptyState = ({ icon, title, description, action }) => (
-  <div className="flex flex-col items-center justify-center py-20 px-6 text-center animate-[fadeIn_0.6s_ease-out]">
+  <div className="flex flex-col items-center justify-center py-20 px-6 text-center animate-fade-in">
     <div className="text-7xl mb-6 opacity-30 animate-[float_3s_ease-in-out_infinite] text-gray-400">
       {icon || <FiPackage />}
     </div>
@@ -43,7 +43,7 @@ export const EmptyState = ({ icon, title, description, action }) => (
       {description || 'Try adjusting your filters or check back later.'}
     </p>
     {action && (
-      <button className="btn-premium bg-gradient-to-r from-primary to-accent text-white py-3 px-8 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95">
+      <button className="btn-premium bg-linear-to-r from-primary to-accent text-white py-3 px-8 rounded-xl font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95">
         {action}
       </button>
     )}
@@ -67,8 +67,8 @@ export const LoadingSpinner = ({ size = 'md' }) => {
 
 // Success Toast (can be used with a toast library)
 export const SuccessMessage = ({ message }) => (
-  <div className="fixed top-4 right-4 z-[10000] animate-[slideIn_0.3s_ease-out]">
-    <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3">
+  <div className="fixed top-4 right-4 z-10000 animate-[slideIn_0.3s_ease-out]">
+    <div className="bg-linear-to-r from-green-500 to-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3">
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
@@ -80,7 +80,7 @@ export const SuccessMessage = ({ message }) => (
 // Badge Component
 export const Badge = ({ children, variant = 'primary', size = 'md' }) => {
   const variants = {
-    primary: 'bg-gradient-to-r from-primary/10 to-accent/10 text-primary',
+    primary: 'bg-linear-to-r from-primary/10 to-accent/10 text-primary',
     success: 'bg-green-100 text-green-700',
     warning: 'bg-yellow-100 text-yellow-700',
     error: 'bg-red-100 text-red-700',

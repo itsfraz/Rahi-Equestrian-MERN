@@ -1,6 +1,5 @@
 const products = [
   {
-    /* HMR trigger */
     id: 1,
     name: "Classic Riding Helmet",
     price: 89.99,
@@ -29,7 +28,8 @@ const products = [
     description: "Premium helmet with advanced ventilation flow. Designed for the competitive rider who demands both safety and style.",
     category: "Rider Gear",
     sizes: ["S", "M", "L"],
-    colors: ["#000000", "#1F2937"]
+    colors: ["#000000", "#1F2937"],
+    seasonal: true
   },
   {
     id: 3,
@@ -158,13 +158,33 @@ const products = [
     image: "/images/Cagry4.jpeg",
     images: [
       "/images/Cagry4.jpeg",
-      "/images/Equ_pro_B01.jpeg", // Simulated view
-      "/images/Equ_pro_B02.jpeg"  // Simulated view
+      "/images/Equ_pro_B01.jpeg",
+      "/images/Equ_pro_B02.jpeg"
     ],
     description: "Soft leather headcollar with brass fittings. Perfect for shows and travel.",
     category: "Horse Care",
     sizes: ["Pony", "Cob", "Full"],
-    colors: ["#3E2723", "#000000", "#5D4037"]
+    colors: ["#3E2723", "#000000", "#5D4037"],
+    seasonal: true
+  },
+  {
+    id: 12,
+    name: "Limited Edition Winter Leather Jacket",
+    price: 349.99,
+    image: "/images/Leather01.jpeg", 
+    images: [
+        "/images/Leather01.jpeg",
+        "/images/Leather02.jpeg",
+        "/images/Leather03.jpeg",
+        "/images/Leather04.jpeg",
+        "/images/Leather05.jpeg"
+    ],
+    description: "Exclusive winter collection piece. Hand-finished Italian leather with thermal insulation lining. Designed for superior warmth and elegance in cold weather conditions.",
+    category: "Apparel",
+    sizes: ["M", "L", "XL"],
+    colors: ["#5D4037", "#000000"],
+    limited_edition: true,
+    seasonal: true
   }
 ];
 

@@ -4,7 +4,7 @@ import { FiHome } from 'react-icons/fi';
 
 const NotFound = () => {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 animate-[fadeIn_0.6s_ease-out]">
+    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 animate-fade-in">
       <h1 className="text-9xl font-display font-black text-gray-100 text-shadow-sm select-none">
         404
       </h1>

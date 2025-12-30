@@ -48,7 +48,7 @@ const Home = () => {
         <link rel="canonical" href="https://rahiequestrian.com/" />
       </Helmet>
       
-      <div className="home-page bg-gradient-to-b from-gray-50 to-white">
+      <div className="home-page bg-linear-to-b from-gray-50 to-white">
       {/* Hero Slider */}
       <div className="w-full h-[65vh] min-h-[450px] max-h-[750px] md:h-[80vh] md:min-h-[550px] relative overflow-hidden">
         <Swiper
@@ -73,7 +73,7 @@ const Home = () => {
                 className="relative h-full flex items-center justify-center text-center bg-cover bg-center text-white"
                 style={{backgroundImage: `url('${slide.image}')`}}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/60"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-black/50 via-black/40 to-black/60"></div>
                 <div className="relative z-10 max-w-5xl px-6 container-custom animate-[fadeIn_1s_ease-out]">
                   <h1 className="mb-6 text-shadow-lg leading-tight font-display animate-[slideUp_0.8s_ease-out]">
                     {slide.title}
@@ -83,7 +83,7 @@ const Home = () => {
                   </p>
                   <a 
                     href="#products-section" 
-                    className="btn-premium inline-flex items-center justify-center bg-gradient-to-r from-primary to-accent text-white py-4 px-10 rounded-full font-bold text-base md:text-lg transition-all duration-300 border-2 border-white/20 shadow-2xl min-h-[56px] hover:shadow-glow hover:scale-105 active:scale-95 animate-[bounceIn_1.2s_ease-out_0.4s_both]"
+                    className="btn-premium inline-flex items-center justify-center bg-linear-to-r from-primary to-accent text-white py-4 px-10 rounded-full font-bold text-base md:text-lg transition-all duration-300 border-2 border-white/20 shadow-2xl min-h-[56px] hover:shadow-glow hover:scale-105 active:scale-95 animate-[bounceIn_1.2s_ease-out_0.4s_both]"
                   >
                     <span className="relative z-10">Explore Collection</span>
                     <svg className="w-5 h-5 ml-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,19 +119,19 @@ const Home = () => {
               <p className="text-base md:text-lg text-text-light leading-relaxed">
                 {feature.desc}
               </p>
-              <div className="mt-6 w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <div className="mt-6 w-12 h-1 bg-linear-to-r from-primary to-accent rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Products Section */}
-      <div id="products-section" className="bg-gradient-to-b from-white to-gray-50 py-16">
+      <div id="products-section" className="bg-linear-to-b from-white to-gray-50 py-16">
         <Products featured={true} />
       </div>
       
       {/* Services Section */}
-      <section id="services-section" className="bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/20 py-16">
+      <section id="services-section" className="bg-linear-to-br from-blue-50/50 via-purple-50/30 to-pink-50/20 py-16">
         <Services />
       </section>
 
@@ -141,7 +141,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-section" className="bg-gradient-to-br from-gray-50 to-blue-50/30 py-16">
+      <section id="contact-section" className="bg-linear-to-br from-gray-50 to-blue-50/30 py-16">
         <Contact />
       </section>
     </div>

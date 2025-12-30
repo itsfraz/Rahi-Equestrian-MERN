@@ -43,10 +43,10 @@ const Services = () => {
       
       <div className="py-12 md:py-20 container-custom">
       <div className="text-center mb-12 md:mb-16">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 gradient-text animate-[fadeIn_0.6s_ease-out]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 gradient-text animate-fade-in">
           Our Services
         </h1>
-        <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full animate-[scaleIn_0.8s_ease-out_0.2s_both]"></div>
+        <div className="w-24 h-1.5 bg-linear-to-r from-primary via-accent to-primary mx-auto rounded-full animate-[scaleIn_0.8s_ease-out_0.2s_both]"></div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -56,7 +56,7 @@ const Services = () => {
             className="card-premium p-8 md:p-10 group relative overflow-hidden animate-[scaleIn_0.6s_ease-out]"
             style={{ animationDelay: `${idx * 0.15}s`, animationFillMode: 'both' }}
           >
-            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${service.color} opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
+            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-linear-to-br ${service.color} opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
             <div className="relative z-10">
               <div className="mb-6 text-primary opacity-80 group-hover:opacity-100 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 inline-block text-shadow-sm">
                 {service.icon}
@@ -67,7 +67,7 @@ const Services = () => {
               <p className="text-base md:text-lg text-text-light leading-relaxed">
                 {service.desc}
               </p>
-              <div className={`mt-6 w-16 h-1.5 bg-gradient-to-r ${service.color} rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
+              <div className={`mt-6 w-16 h-1.5 bg-linear-to-r ${service.color} rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
             </div>
           </div>
         ))}

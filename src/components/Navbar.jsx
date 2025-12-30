@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`
-        sticky top-0 z-[9999] border-b transition-all duration-500
+        sticky top-0 z-9999 border-b transition-all duration-500
         ${scrolled 
           ? 'bg-white/95 backdrop-blur-strong shadow-lg border-gray-200' 
           : 'bg-white/98 backdrop-blur-glass shadow-sm border-gray-100'
@@ -51,10 +51,10 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16 md:h-20">
             <Link 
               to="/" 
-              className="flex items-center gap-3 z-[10001] transition-all duration-300 hover:scale-105"
+              className="flex items-center gap-3 z-10001 transition-all duration-300 hover:scale-105"
             >
               <img src="/images/Logo.png" alt="Rahi Equestrian Logo" className="h-10 md:h-12 w-auto object-contain" />
-              <span className="text-xl md:text-2xl font-display font-black gradient-gold-text tracking-tight whitespace-nowrap hidden sm:block">
+              <span className="text-lg md:text-2xl font-display font-black gradient-gold-text tracking-tight whitespace-nowrap block">
                 Rahi Equestrian
               </span>
             </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
             <button
               className={`
                 md:hidden flex items-center justify-center w-11 h-11 text-xl text-text 
-                cursor-pointer rounded-xl transition-all duration-300 z-[10001]
+                cursor-pointer rounded-xl transition-all duration-300 z-10001
                 ${scrolled ? 'bg-primary/10 text-primary' : 'bg-gray-100 hover:bg-gray-200'}
                 active:scale-90
               `}
@@ -111,7 +111,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998] md:hidden animate-[fadeIn_0.3s_ease-out]"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-9998 md:hidden animate-fade-in"
           onClick={toggleMenu}
           aria-hidden="true"
         />
@@ -123,7 +123,7 @@ const Navbar = () => {
           fixed top-16 left-0 right-0 bottom-0
           bg-linear-to-br from-white via-blue-50/30 to-purple-50/30
           backdrop-blur-xl
-          z-[9999]
+          z-9999
           md:hidden
           overflow-y-auto
           overscroll-contain
